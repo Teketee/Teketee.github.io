@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Contact</title>
+    <title>Unbeatable Tic-Tac-Toe</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -69,22 +69,41 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/black-background.jpg')">
+    <header class="intro-header" style="background-image: url('/img/black-background.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Contact Me</h1>
+                        <h1>Unbeatable <br>Tic-Tac-Toe</h1>
                         <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
-                    </div>
+                        <p class="post-meta">Posted on March 9th, 2021</p>                    </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>This implementation of Tic-Tac-Toe uses the Minimax Algorithm to make the computer unbeatable.</p>
 
-    <!-- Main Content -->
-    
+                    <h2 class="section-heading">What is Minimax?</h2>
+                    <p>The Minimax Algorithm is a recurisve algorithm which is used in decision-making and game theory, more commonly in two player turn-based games such as Tic-Tac-Toe.</p>
+                    There are two players, the maximizer(you) and the minimizer (the computer). The maximizer tries to get the highest score possible while the minimizer tries to do the opposite 
+                    and get the lowest score possible. The overall idea is giving each state of the 9x9 board a score associated with it:
+                    <p style="margin-left:10%; margin-right:10%;">If the move results in the player winning: score = +10
+                    <br>If the move results in the computer winning: score = -10
+                    <br>If the move results in a draw: score = 0</p>
+                    
+                    <h2 class="section-heading">C++ implementation</h2>
+                    <p>Add C++ Code here</p>
+                        
+                </div>
+            </div>
+        </div>
+    </article>
+
     <hr>
 
     <!-- Footer -->
