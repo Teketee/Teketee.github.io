@@ -87,17 +87,76 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>This implementation of Tic-Tac-Toe uses the Minimax Algorithm to make the computer unbeatable.</p>
-
+                    <video width="800" height="300" controls>
+                        <source src="/img/minimax.mp4" type=video/mp4>
+                      </video>
                     <h2 class="section-heading">What is Minimax?</h2>
-                    <p>The Minimax Algorithm is a recurisve algorithm which is used in decision-making and game theory, more commonly in two player turn-based games such as Tic-Tac-Toe.</p>
+                    <p>The Minimax Algorithm is a recurisve back-tracing algorithm which is used in decision-making and game theory, more commonly in <b>SOLVED</b> two player turn-based games such as Tic-Tac-Toe.</p>
                     There are two players, the maximizer(you) and the minimizer (the computer). The maximizer tries to get the highest score possible while the minimizer tries to do the opposite 
                     and get the lowest score possible. The overall idea is giving each state of the 9x9 board a score associated with it:
                     <p style="margin-left:10%; margin-right:10%;">If the move results in the player winning: score = +10
                     <br>If the move results in the computer winning: score = -10
                     <br>If the move results in a draw: score = 0</p>
                     
+                    <a href="#">
+                        <img class="img-responsive" src="/img/TIC_TAC.jpg" alt="miniax_visual">
+                    </a>
+                    <p>In this implementation, the computer will recurisvely try every state of the game for both players to look at every possibilty.
+                      After every recursive call, it will compare the new board score to the previous to keep track of the lowest. Once it's tried every possibility
+                      the coordinates of the 'worst state' will be returned and that is the move the computer will make. This makes it impossible for a user to win,
+                      they can only tie or lose.
+                    </p>
+
+
+
                     <h2 class="section-heading">C++ implementation</h2>
-                    <p>Add C++ Code here</p>
+<pre><code class="language-c++">int minimax(int board[3][3], bool maximizer, int* find_row, int *find_col) {
+    int best_row = -1;
+    int best_col = -1;
+                    
+    if(isWinner(board) == 1) { //if the player wins
+        return +10; //return +10
+    } else if(isWinner(board) == 2) { //if ai wins, return -10
+        return -10;
+    } else if(isWinner(board) == 4) { //if its a tie, return 0
+        return 0; 
+    } 
+                    
+    if(maximizer) { //if it is the maximizers turn (player)
+        int bestMove = -10000;
+    for(int row = 0; row < 3; row++) { //for each move
+        for(int col = 0; col < 3; col++) {
+            if(board[row][col] == 0) { //if its an available spot
+                board[row][col] = 1; //place 'x' 
+                int score = minimax(board, !maximizer, depth+1, find_row, find_col);//recurse
+                if(score > bestMove) { //if the move is better
+                    bestMove = score;  //new best move
+                }
+                board[row][col] = 0; //undo move
+            }
+        }
+    }
+    return bestMove;
+    } else { //otherwise its the minimizers turn
+        int bestMove = +1000000;
+        for(int row = 0; row < 3; row++) {
+            for(int col = 0; col < 3; col++) {
+                if(board[row][col] == 0) { //if its an available spot
+                    board[row][col] = 2; //place '0'
+                    int score = minimax(board, !maximizer, depth+1, find_row, find_col);
+                    if(score < bestMove) {
+                        bestMove = score; //find minimum
+                        best_row = row;
+                        best_col = col;
+                    }
+                    board[row][col] = 0;
+                }
+            }
+        }
+        *find_row = best_row; //store the best row found
+        *find_col = best_col; //store the best column
+        return bestMove; //return the score.
+   } //end </code></pre>
                         
                 </div>
             </div>
