@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Unbeatable Tic-Tac-Toe</title>
+    <title>Homicides in Mexico</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -74,8 +74,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Unbeatable <br>Tic-Tac-Toe</h1>
+                        <h1>Homicides in Mexico</h1>
                         <hr class="small">
+                        <p>The endless War on Drugs</p>
                         <p class="post-meta">Posted on March 9th, 2021</p>                    </div>
                 </div>
             </div>
@@ -87,25 +88,15 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>This implementation of Tic-Tac-Toe uses the Minimax Algorithm to make the computer unbeatable.</p>
-                    <h2 class="section-heading">What is Minimax?</h2>
-                    <p>The Minimax Algorithm is a recurisve back-tracing algorithm which is used in decision-making and game theory, more commonly in <b>SOLVED</b> two player turn-based games such as Tic-Tac-Toe.</p>
-                    There are two players, the maximizer(you) and the minimizer (the computer). The maximizer tries to get the highest score possible while the minimizer tries to do the opposite 
-                    and get the lowest score possible. The overall idea is giving each state of the 9x9 board a score associated with it:
-                    <p style="margin-left:10%; margin-right:10%;">If the move results in the player winning: score = +10
-                    <br>If the move results in the computer winning: score = -10
-                    <br>If the move results in a draw: score = 0</p>
-                    
-                    <a href="#">
-                        <img class="img-responsive" src="/img/TIC_TAC.jpg" alt="miniax_visual">
-                    </a>
-                    <p>In this implementation, the computer will recurisvely try every state of the game for both players to look at every possibilty.
-                      After every recursive call, it will compare the new board score to the previous to keep track of the lowest. Once it's tried every possibility
-                      the coordinates of the 'worst state' will be returned and that is the move the computer will make. This makes it impossible for a user to win,
-                      they can only tie or lose.
-                    </p>
+                    <iframe src='/post/homicides/data.html' 
+                    title="Jupyter Notebook" 
+                    height = 3250px 
+                    width = 1000 
+                    style="border:1px solid black; display:block;">
+                    </iframe> 
     
    <footer>
-    <p>View the rest of the code <a href="https://github.com/Teketee/Unbeatable-Tic-tac-toe/blob/master/minimax.cpp">here</a></p>
+    <p>View the rest of the code <a href="https://github.com/Teketee/Homicides-in-Mexico">here</a></p>
   </footer>
                 </div>
                 
