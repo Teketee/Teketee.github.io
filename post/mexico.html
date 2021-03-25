@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Contact</title>
+    <title>Unbeatable Tic-Tac-Toe</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="/css/clean-blog.min.css" rel="stylesheet">
@@ -56,10 +56,10 @@
                     </li>
                     <!--<<li>
                         <a href="/post.html">Blog</a>
-                    </li>-->
+                    </li>
                     <li>
                         <a href="/contact.html">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -69,53 +69,53 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/black-background.jpg')">
+    <header class="intro-header" style="background-image: url('/img/black-background.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Contact Me</h1>
+                        <h1>Unbeatable <br>Tic-Tac-Toe</h1>
                         <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
-                    </div>
+                        <p class="post-meta">Posted on March 9th, 2021</p>                    </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- Main Content -->
-    
-    <hr>
-
-    <!-- Footer -->
-    <footer>
+    <!-- Post Content -->
+    <article>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="/https://www.linkedin.com/in/daniel-p-088309138/">
-                                <span class="fa-stack fa-lg">
-                                   <!-- <a href="/https://github.com/twbot" class="link"><div><i class="fab fa-github-square fa-3x"></i></div></a> -->
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/https://github.com/Teketee">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- <p class="copyright text-muted">Copyright &copy; Your Website 2016</p> -->
+                    <p>This implementation of Tic-Tac-Toe uses the Minimax Algorithm to make the computer unbeatable.</p>
+                    <h2 class="section-heading">What is Minimax?</h2>
+                    <p>The Minimax Algorithm is a recurisve back-tracing algorithm which is used in decision-making and game theory, more commonly in <b>SOLVED</b> two player turn-based games such as Tic-Tac-Toe.</p>
+                    There are two players, the maximizer(you) and the minimizer (the computer). The maximizer tries to get the highest score possible while the minimizer tries to do the opposite 
+                    and get the lowest score possible. The overall idea is giving each state of the 9x9 board a score associated with it:
+                    <p style="margin-left:10%; margin-right:10%;">If the move results in the player winning: score = +10
+                    <br>If the move results in the computer winning: score = -10
+                    <br>If the move results in a draw: score = 0</p>
+                    
+                    <a href="#">
+                        <img class="img-responsive" src="/img/TIC_TAC.jpg" alt="miniax_visual">
+                    </a>
+                    <p>In this implementation, the computer will recurisvely try every state of the game for both players to look at every possibilty.
+                      After every recursive call, it will compare the new board score to the previous to keep track of the lowest. Once it's tried every possibility
+                      the coordinates of the 'worst state' will be returned and that is the move the computer will make. This makes it impossible for a user to win,
+                      they can only tie or lose.
+                    </p>
+    
+   <footer>
+    <p>View the rest of the code <a href="https://github.com/Teketee/Unbeatable-Tic-tac-toe/blob/master/minimax.cpp">here</a></p>
+  </footer>
                 </div>
+                
             </div>
         </div>
-    </footer>
+        
+    </article>
+
+    <hr>
+
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -129,7 +129,5 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
-
 </body>
-
 </html>
